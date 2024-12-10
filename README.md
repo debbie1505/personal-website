@@ -9,8 +9,8 @@ This is my responsive personal website that showcase my professional experience,
 - Vanilla JavaScript
 - Font Awesome for icons
 
-## License
-MIT License
+## Disclaimer
+This was built using the tool called WindSurf an AI Coding Assistant.
 
 ## Contact
 Taiwo Omoya
