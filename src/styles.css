@@ -113,7 +113,7 @@ nav ul li a:hover::after {
     justify-content: center;
     padding: 2rem 0;
     background: white;
-    margin-top: 80px;
+    /*margin-top: 80px;*/
     display:flex;
     flex-direction:column;
     width:100%;
@@ -190,7 +190,7 @@ nav ul li a:hover::after {
     padding: 4rem 2rem;
     margin: 2rem 0;
     background: white;
-    border: 1px solid var(--border-color);
+    /*border: 1px solid var(--border-color);*/
 }
 
 .section h2 {
@@ -198,7 +198,7 @@ nav ul li a:hover::after {
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    color: var(--primary-color);
+   /* color: var(--primary-color);*/
 }
 
 .accent {
@@ -209,7 +209,7 @@ nav ul li a:hover::after {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
     gap: 2rem;
     margin-top: 2rem;
 }
