@@ -12,3 +12,6 @@ This is my responsive personal website that showcase my professional experience,
 ## Contact
 Taiwo Omoya
 Email: omoyataiwo21@gmail.com
+
+#Badges
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3ba36e68-981f-4c8e-8e9e-ed6bbda85247/deploy-status)](https://app.netlify.com/sites/taiwoomoya/deploys)
