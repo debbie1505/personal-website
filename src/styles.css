@@ -39,7 +39,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
-    border-radius: 15px;
+    /*border-radius: 15px;*/
     box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
 }
 
@@ -54,7 +54,7 @@ header {
     z-index: 1000;
     padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.98);
-    border-bottom: 2px solid var(--light-blue);
+    /*border-bottom: 2px solid var(--light-blue);*/
 }
 
 nav {
@@ -64,10 +64,11 @@ nav {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--primary-color);
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    /*background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));*/
+    background-color:var(--primary-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -132,7 +133,7 @@ nav ul li a:hover::after {
     text-align: center;
     /*padding: 4rem 2rem;*/
     max-width: 100%;
-    display:flex; 
+    display:flex;
     justify-content:space between;
     align-items:center;
     width:100%;
@@ -191,7 +192,7 @@ nav ul li a:hover::after {
     padding: 4rem 2rem;
     margin: 2rem 0;
     background: white;
-    /*border: 1px solid var(--border-color);*/
+    border: 1px solid var(--border-color);
 }
 
 .section h2 {
