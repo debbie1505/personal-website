@@ -15,30 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Animate sections on scroll
-    const sections = document.querySelectorAll('.section');
-    const options = {
-        root: null,
-        threshold: 0.1,
-        rootMargin: "0px"
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(50px)";
-        section.style.transition = "all 0.5s ease-out";
-        observer.observe(section);
+    window.addEventListener('scroll', function(){
+        const element = document.querySelector('sticy-section');
+        const scrollTop = window.scrollY;
+        element.style.transform = `TranslateY(${scrollTop * - 0.5}px)`;
     });
-
     // Animate skill cards
     const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach((card, index) => {
@@ -80,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
 
     // Parallax effect for hero section
-    const heroSection = document.querySelector('.hero-section');
+    const heroSection = document.querySelector('.hero-section-container');
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
@@ -105,3 +86,48 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineObserver.observe(item);
     });
 });
+
+
+/*const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      entry.target.style.opacity = "0";
+    } else {
+      entry.target.style.opacity = "1";
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach(section => observer.observe(section));
+
+*/
+/*
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+      entry.target.classList.add('exit');
+    } else {
+      entry.target.classList.remove('exit');
+    }
+  });
+}, { threshold: 0 });
+
+sections.forEach(section => observer.observe(section));
+*/
+const elements = document.querySelectorAll('.fade-in.hidden');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hidden');
+      observer.unobserve(entry.target); // Stop observing once it's visible
+    }
+  });
+});
+
+elements.forEach((el) => observer.observe(el));

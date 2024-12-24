@@ -27,7 +27,7 @@
 
 
         <main>
-            <section id="hero" class="hero-section-container">
+            <section id="hero" class="hero-section-container sticky-section fade-in hidden">
                                         <div class="hero-content" style=" min-height:80vh">
                     
                                             <div class="profile-photo" style=" width: 100%;">
@@ -49,17 +49,18 @@
                                             </div>  --> 
                                         </div>
                                         
-                                        <section id="about" class="section glass-morphism"style="height:50vh">
-                                            <h2 style="font-size:2.5rem"><span class="accent">/</span>About Me</h2>
-                                        <div class="about-content" style="margin-top:40px;">
-                                            <p style="font-size:1.2rem"> I am a student currently studying Liberal Arts Math and Science
-                                                at Hudson Valley Community Collge. I plan on transfering as a computer science or computer 
-                                                engineering major. I am interested in coding because I believe in the power it can yield when it comes to making an impact in the world
-                                                And I am commited to equiping myself with neccessary tools and skills to make that impact.</p>
-                                                </div>
-                                                </section>
+                                        
                                                   
             </section>
+            <section id="about" class="section glass-morphism sticky-section fade-in hidden"style="height:50vh">
+                <h2 style="font-size:2.5rem"><span class="accent">/</span>About Me</h2>
+            <div class="about-content" style="margin-top:40px;">
+                <p style="font-size:1.2rem"> I am a student currently studying Liberal Arts Math and Science
+                    at Hudson Valley Community Collge. I plan on transfering as a computer science or computer 
+                    engineering major. I am interested in coding because I believe in the power it can yield when it comes to making an impact in the world
+                    And I am commited to equiping myself with neccessary tools and skills to make that impact.</p>
+                    </div>
+                    </section>
             
                 
                     <!--<div class="skills-grid">
@@ -87,7 +88,7 @@
             </section> -->
 
 
-<section id="experience" class="section glass-morphism">
+<section id="experience" class="section glass-morphism sticky-section fade-in hidden">
     <h2><span class="accent">/</span>Experience</h2>
     <div class="timeline">
         <div class="timeline-item">
@@ -121,7 +122,7 @@
     
 </section>
 
-<section id="projects" class=" section glass-morphism" >
+<section id="projects" class=" section glass-morphism sticky-section fade-in hidden" >
     <h2><span class="accent">/</span>Projects</h2>
     <div class="project-grid">
         <div class="project-card">
@@ -239,12 +240,14 @@
                         </div>
                         </div>
              </div>
+             
        </section>
-       <section id="contact" class="section glass-morphism">
+
+       <section id="contact" class="section glass-morphism fade-in hidden">
         <h2><span class="accent">/</span>Contact</h2>
         <div class="contact-content">
             <div class="contact-text">
-                <p>I would love to hear from you; my contact info are below</p>
+                <p>I would love to hear from you! my contact info are below</p>
                 <a href="mailto:your.email@example.com" class="email-link">
                     <i class="fas fa-envelope"></i> omoyataiwo21@gmail.com
                 </a>
@@ -258,7 +261,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2023 Taiwo Omoya. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Taiwo Omoya. All rights reserved.</p>
 </footer>
 </div>
 
