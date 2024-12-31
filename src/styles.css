@@ -107,14 +107,13 @@ nav ul li a:hover::after {
 /* Hero Section */
 .hero-section-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 3;
+  height: 100vh;
+
 }
 
 #profile-img {
@@ -124,8 +123,6 @@ nav ul li a:hover::after {
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite;
 }
 
 @keyframes bounce {
@@ -135,14 +132,13 @@ nav ul li a:hover::after {
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-9px);
   }
 }
 
 .hero-content {
   text-align: center;
-  height: 100vh;
-
+ 
   /*padding: 4rem 2rem;*/
   max-width: 100%;
   display: flex;
@@ -166,6 +162,26 @@ nav ul li a:hover::after {
   letter-spacing: -0.5px;
 }
 
+.download-resume{
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 3rem;
+  min-width: 10rem;
+  border: 1px solid var(--border-color);
+  color: var(--secondary-color);
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight:bolder;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+  -webkit-animation: bounce 1s infinite;
+  animation: bounce 1.2s infinite;
+  text-decoration: none;
+}
+
+button:hover{
+  -webkit-animation: none;
+  animation: none;
+}
 /* Scroll Indicator */
 .scroll-indicator {
   margin-top: 8rem;
