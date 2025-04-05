@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding for fixed header */
 }
 
 body {
@@ -44,15 +45,16 @@ body {
 
 /* Header Styles */
 header {
-  position: fixed;
-  top: 20px;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0; /* Added to position at top */
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
-  z-index: 1000;
   padding: 1rem 2rem;
   background: var(--background-color);
+  z-index: 1000; /* Added to ensure header stays on top */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added for visual distinction */
 }
 
 nav {
@@ -67,8 +69,8 @@ nav {
   color: var(--primary-color);
   background-color: var(--primary-color);
   background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; /* Added for browser compatibility */
+  color: transparent; /* Added to make background-clip work */
 }
 
 nav ul {
@@ -85,6 +87,7 @@ nav ul li a {
   position: relative;
 }
 
+/* Uncommented and fixed hover effect for nav links */
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -96,12 +99,12 @@ nav ul li a::after {
   transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: var(--secondary-color);
-}
-
 nav ul li a:hover::after {
   width: 100%;
+}
+
+.links:hover {
+  color: var(--secondary-color);
 }
 
 /* Hero Section */
@@ -111,18 +114,20 @@ nav ul li a:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 3;
   height: 100vh;
+  margin-top: 80px; /* Added to account for fixed header */
+  padding-top: 2rem; /* Added for spacing */
+}
 
+.profile-photo {
+  width: 100%;
 }
 
 #profile-img {
-  width: 500px;
-  height: 500px;
-  border: 4px solid var();
+  max-width: 300px;
+  max-height: 500px;
+  border: 4px solid var(--border-color); /* Fixed empty var() */
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
 }
 
 @keyframes bounce {
@@ -138,8 +143,6 @@ nav ul li a:hover::after {
 
 .hero-content {
   text-align: center;
- 
-  /*padding: 4rem 2rem;*/
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -162,7 +165,7 @@ nav ul li a:hover::after {
   letter-spacing: -0.5px;
 }
 
-.download-resume{
+.download-resume {
   padding: 10px;
   border-radius: 5px;
   min-height: 3rem;
@@ -171,17 +174,20 @@ nav ul li a:hover::after {
   color: var(--secondary-color);
   background-color: white;
   font-size: 1.2rem;
-  font-weight:bolder;
+  font-weight: bolder;
   box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
   -webkit-animation: bounce 1s infinite;
   animation: bounce 1.2s infinite;
   text-decoration: none;
+  cursor: pointer; /* Added to indicate it's clickable */
 }
 
-button:hover{
+.download-resume:hover {
   -webkit-animation: none;
   animation: none;
+  background-color: var(--light-blue); /* Added hover effect */
 }
+
 /* Scroll Indicator */
 .scroll-indicator {
   margin-top: 8rem;
@@ -229,6 +235,7 @@ button:hover{
   padding: 2rem;
   box-sizing: border-box;
   transition: opacity 0.3s ease;
+  scroll-margin-top: 80px; /* Added to account for fixed header when scrolling to anchors */
 }
 
 .hidden {
@@ -323,7 +330,6 @@ button:hover{
 }
 
 /* Project Cards */
-
 #projects {
   padding: 4rem 2rem;
   margin: 2rem 0;
@@ -332,11 +338,15 @@ button:hover{
   padding: 2rem;
   box-sizing: border-box;
   position: relative;
+  scroll-margin-top: 80px; /* Added to account for fixed header */
 }
+
 .project-grid {
-  max-height: fit-content;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Changed to be more responsive */
   gap: 2rem;
   padding: 1rem;
 }
@@ -379,14 +389,15 @@ button:hover{
 .project-info {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  padding-top: .5em;
+  padding-top: 0.5em;
   height: 60%;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
+
 .project-info-text {
-  font-size: px;
+  font-size: 0.9rem; /* Added missing font size */
 }
 
 .project-tech {
@@ -423,6 +434,10 @@ button:hover{
 }
 
 /* Contact Section */
+#contact {
+  scroll-margin-top: 80px; /* Added to account for fixed header */
+}
+
 .contact-content {
   text-align: center;
   background: var(--background-color);
@@ -490,11 +505,19 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .profile-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   header {
-    position: static;
+    position: sticky; /* Changed to sticky for mobile */
+    top: 0;
+    left: 0;
     transform: none;
     width: 100%;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    z-index: 1000;
   }
 
   nav {
@@ -506,6 +529,11 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+
+  .hero-section-container {
+    margin-top: 0; /* Adjusted for sticky header on mobile */
+    padding-top: 4rem;
   }
 
   .section {
@@ -522,5 +550,74 @@ footer {
 
   .timeline-dot {
     left: -0.6rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Force single column on mobile */
+  }
+
+  .hero-content {
+    flex-direction: column; /* Stack content on mobile */
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 0;
+  }
+
+  #profile-img {
+    max-width: 250px; /* Slightly smaller on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section-container {
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 80vh; /* Minimum height */
+    padding: 5rem 1rem 3rem;
+  }
+
+  #profile-img {
+    max-width: 200px; /* Smaller on mobile */
+  }
+
+  .download-resume {
+    margin-top: 1.5rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section-container {
+    padding-top: 4rem;
+  }
+
+  #profile-img {
+    max-width: 160px; /* Even smaller on very small screens */
+  }
+
+  .hero-text span {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
   }
 }
